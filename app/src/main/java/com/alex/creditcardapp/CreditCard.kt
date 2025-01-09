@@ -44,7 +44,7 @@ fun CreditCard(cardInfo: CardInfo){
                         .align(Alignment.TopEnd)
                 )
                 Column (modifier = Modifier.align(Alignment.BottomStart)){
-                    Text(text = cardInfo.cardNumber, fontSize = 16.sp, letterSpacing = 1.2.sp)
+                    Text(text = cardInfo.cardNumber, fontSize = 24.sp, letterSpacing = 1.2.sp, modifier = Modifier.padding(bottom = 20.dp))
                     Text(text = cardInfo.cardHolder, fontSize = 16.sp, letterSpacing = 1.1.sp)
                 }
             }
