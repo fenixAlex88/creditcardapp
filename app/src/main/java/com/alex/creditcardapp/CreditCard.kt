@@ -27,26 +27,29 @@ fun CreditCard(cardInfo: CardInfo){
         shape = RoundedCornerShape(8.dp),
         elevation = CardDefaults.cardElevation(8.dp)
     ){
-        Image(
-            painter = painterResource(id = cardInfo.backgroundImage),
-            contentDescription = "Card background",
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.FillBounds
-
-        )
-        Box(modifier = Modifier.padding(16.dp)){
+        Box(){
             Image(
-                painter = painterResource(id = cardInfo.providerImage),
-                contentDescription = "Provider Image",
-                modifier = Modifier
-                    .width(86.dp)
-                    .align(Alignment.TopStart)
+                painter = painterResource(id = cardInfo.backgroundImage),
+                contentDescription = "Card background",
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.FillBounds
+
             )
-            Column (modifier = Modifier.align(Alignment.BottomStart)){
-                Text(text = cardInfo.cardNumber, fontSize = 16.sp, letterSpacing = 1.2.sp)
-                Text(text = cardInfo.cardHolder, fontSize = 16.sp, letterSpacing = 1.1.sp)
+            Box(modifier = Modifier.padding(16.dp).fillMaxSize()){
+                Image(
+                    painter = painterResource(id = cardInfo.providerImage),
+                    contentDescription = "Provider Image",
+                    modifier = Modifier
+                        .width(86.dp)
+                        .align(Alignment.TopEnd)
+                )
+                Column (modifier = Modifier.align(Alignment.BottomStart)){
+                    Text(text = cardInfo.cardNumber, fontSize = 16.sp, letterSpacing = 1.2.sp)
+                    Text(text = cardInfo.cardHolder, fontSize = 16.sp, letterSpacing = 1.1.sp)
+                }
             }
         }
+
     }
 }
 
